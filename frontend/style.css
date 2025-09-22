@@ -13,7 +13,7 @@
   border-color: burlywood;
 }
 
-.log-in {
+.btn {
    padding: 5px; 
   border-radius: 10px; 
   background-color: burlywood; 
@@ -21,14 +21,6 @@
   float: right;
 } 
 
-
-.sign-up {
-  padding: 5px; 
-  border-radius: 10px; 
-  background-color: burlywood; 
-  font-weight: bold; 
-  float: right;
-}
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -45,7 +37,13 @@
   height: auto;
   border-radius: 5px;
 }
-
+ 
+h3 {
+  padding: 2px;
+  background-color: burlywood;
+  border-radius: 10px;
+  font-size: small;
+}
 
 
 
