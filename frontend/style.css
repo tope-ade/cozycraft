@@ -4,6 +4,7 @@
   background-color:burlywood; 
   color:black; 
   border-radius: 10px;
+  text-decoration-line: underline;
 
 }
 
@@ -14,12 +15,13 @@
 }
 
 .btn {
-   padding: 5px; 
+  padding: 5px; 
   border-radius: 10px; 
   background-color: burlywood; 
   font-weight: bold; 
   float: right;
 } 
+
 
 .product-card {
   border: 1px solid #ddd;
@@ -34,8 +36,9 @@
 
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
  
 h3 {
@@ -45,6 +48,39 @@ h3 {
   font-size: small;
 }
 
+.login {
+  font-weight: bold;
+  
+}
+
+.login-btn {
+  padding: 5px; 
+  border-radius: 10px; 
+  background-color: burlywood; 
+  font-weight: bold; 
+}
 
 
+.hero-side {
+  flex: 2; /* take less space */
+  background: url('images/banner.jpg') no-repeat center center/cover;
+  color: burlywood;
+  padding: 30px;
+  border-radius: 8px;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
+
+.hero-side h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+
+.hero-side p {
+  margin-bottom: 10px;
+}
