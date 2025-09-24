@@ -22,6 +22,12 @@
   float: right;
 } 
 
+.category {
+  color: burlywood;
+  font-size:x-large;
+  font-family: 'Times New Roman';
+}
+
 
 .product-card {
   border: 1px solid #ddd;
