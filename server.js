@@ -26,9 +26,9 @@ app.use('/api/products', productRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //fallback for SPA if needed (optional)
-app.get('*', (req,res) => {
+app.use((req,res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 4040;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`server running on http://localhost:${PORT}`));

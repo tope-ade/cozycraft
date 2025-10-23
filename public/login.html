@@ -19,17 +19,38 @@
   <hr style="color: burlywood; border-width: 2px;">
 
   <fieldset>
-
     <legend>Account login</legend>
-    <label for="username"><small>Username</small></label> <br>
-    <input class="search-input"  type="text" id = "username" name="username" autocomplete="off"> <br>
+    <form id="login-form">
+      <label>Email</label> <br>
+      <input class="search-input" id="email" type="text" required> <br>
 
-  
-    <label for="password"><small>Password</small></label> <br>
-    <input class="search-input" type="password" id = "password" name="paswword" autocomplete="off"> <br> 
+      <label>Password</label> <br>
+      <input class="search-input" id="password" type="text" required> <br> <br>
 
-    <button class="login-btn">login</button>
-
+      <button type="submit" class="login-btn">Log in</button> <br>
+    </form>
   </fieldset>
+
+  <script>document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {'content-Type' : 'application/json'},
+      body: JSON.stringify({
+        email: document.getElementById('email').value.trim(),
+        password: document.getElementById('password').value
+      })
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      localStorage.setItem('token', data.token);
+      window.location.href = '/';
+    } else {
+      alert(data.message || 'Login failed');
+    }
+ });
+  </script>
 
 </body>
