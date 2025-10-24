@@ -9,18 +9,19 @@
 </head>
 
 <body>
-
-    <h1 class="brand-name">
+  <h1 class="brand-name">
      <a href="index.html">COZYCRAFT</a>
-    </h1>
+  </h1>
 
-      <input class ="search-input" type="text"; 
-        placeholder="search products">  
+  <input class ="search-input" type="text"; placeholder="search products">  
+    
+  </div>
 
-     
-   <a class = "btn" href="signup.html">sign up</a>
-
-    <a class = "btn" href="login.html">log in</a>
+  <div id="auth-section" class="welcome-text">
+     <a class = "btn" href="signup.html">sign up</a>
+     <a class = "btn" href="login.html">log in</a>
+  </div>
+    
 
   <hr style="color: burlywood; border-width: 2px;">
 
@@ -173,6 +174,19 @@
 
   </h3>
     
-
 </body>
+<script>
+  const token = localStorage.getItem('token');
+  if (token) {
+    fetch('api/user/profile', {
+      headers: {'Authorization' : `Beare ${token}`}
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.user?.name) {
+        document.getElementById('auth-section').textContent = `welcome, ${data.user.name}!`;
+      }
+    });
+  }
+</script>
 </html>

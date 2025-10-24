@@ -7,6 +7,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 //initialize express
 const app = express();
@@ -21,6 +22,7 @@ connectDB();
 //API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/user', userRoutes);
 
 //serve frontend static files from /public
 app.use(express.static(path.join(__dirname, 'public')));

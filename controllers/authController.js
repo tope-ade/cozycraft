@@ -27,7 +27,9 @@ exports.signup = async (req,res) => {
     const token =jwt.sign({id: user._id, name: user.name}, process.env.JWT_SECRET, {expiresIn: '7d'});
 
     res.status(201).json({
-      token, user: {id: user._id, name: user.name, email: user.email}
+      message : 'Signup successful',
+      token, 
+      user: {id: user._id, name: user.name, email: user.email}
     });
 
   } catch (err) {
@@ -60,7 +62,11 @@ exports.login = async (req,res) => {
 
     const token = jwt.sign({id: user._id, name: user.name}, process.env.JWT_SECRET, {expiresIn: '7d'});
     
-    res.json({token, user: {id: user._id, name: user.name, email: user.email}});
+    res.json({
+      message : 'Login successful',
+      token, 
+      user: {id: user._id, name: user.name, email: user.email}
+    });
 
   } catch (err) {
     console.error(err);

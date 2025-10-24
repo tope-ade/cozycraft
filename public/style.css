@@ -8,6 +8,13 @@
 
 }
 
+.welcome-text {
+  padding: 2px;
+  color: burlywood;
+  float: right;
+  font-weight: bold;
+}
+
 .search-input {
   padding: 5px; 
   border-radius: 10px; 
