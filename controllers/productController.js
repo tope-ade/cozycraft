@@ -1,33 +1,79 @@
 
-const product = require('../models/Product');
+const Product = require('../models/Product');
 const { findById } = require('../models/User');
 
-exports.getAll = async (req,res) => {
+exports.getAllProducts = async (req,res) => {
   try {
-    const products = await Product.find().sort({created: -1});
+    const products = await Product.find().sort({createdAt: -1});
     res.json(products);
     
   } catch (err) {
-    console.error(err)
+    console.error('Error fetching products:', err)
     res.status(500).json({
       message : 'server error'
     });
   }
 };
 
-exports.getOne = async (req,res) => {
+exports.getProductById = async (req,res) => {
   try {
-    const p = await Product.findById(req.params.id);
-    if (!p)
-    return res.staus(404).json({
-     message : 'Not found'
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+    return res.status(404).json({
+     message : 'Product not found'
     });
-    res.json(p);
+    }
+    res.json(product);
     
   } catch (err) {
-    console.error(err)
-    res.ststus(500).json({
+    console.error('Error fetching product:', err)
+    res.status(500).json({
       message : 'server error'
     });
   }
 };
+
+//protected route
+exports.createProduct = async (req,res) => {
+  try {
+    const {name, category, price, description, imageUrl} =req.body;
+    if (!name || !category || !price) {
+      return res.status(400).json({
+        message: 'Name, category and price are required'
+      });
+    }
+    const product = new Product({name, category, price, description, imageUrl});
+    await product.save();
+    res.status(200).json({
+      message: 'Product created successfully'
+    });
+
+  } catch (err) {
+    console.error('Error creating product:', err);
+    res.status(500).json({
+      message : 'Server error'
+    });
+  }
+};
+
+//protected route
+exports.deleteProduct = async (req,res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    if (!product) {
+      return res.status(404).json({
+        message: 'Product not found'
+      });
+    }
+    res.json({
+        message: 'Product deleted successfully',
+        deletedProduct : product
+      });
+
+  } catch (err) {
+    console.error('Error deleting product:', err);
+    res.status(500).json({
+      message : 'Server error'
+    });
+  }
+}; 

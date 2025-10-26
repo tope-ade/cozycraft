@@ -1,9 +1,15 @@
 
 const express = require('express');
 const router = express.Router();
-const {getAll, getOne} = require('../controllers/productController');
+const {getAllProducts, getProductById, createProduct, deleteProduct} = require('../controllers/productController');
+const auth = require('../middleware/authMiddleware');
 
-router.get('/', getAll);
-router.get('/:id', getOne);
+//public
+router.get('/', getAllProducts);
+router.get('/:id', getProductById);
+
+//protected
+router.post('/', auth, createProduct);
+router.delete('/:id', auth, deleteProduct);
 
 module.exports = router;
