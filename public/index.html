@@ -14,8 +14,6 @@
   </h1>
 
   <input class ="search-input" type="text"; placeholder="search products">  
-    
-  </div>
 
   <div id="auth-section" class="welcome-text">
      <a class = "btn" href="signup.html">sign up</a>
@@ -30,6 +28,13 @@
     <p>“Discover our carefully curated collection of cozy beds, stylish chairs, and elegant wardrobes designed to bring comfort, beauty, and functionality into every corner of your home. Whether you’re upgrading your bedroom, refreshing your living space, or organizing with timeless storage, CozyCraft helps you create a home that truly feels like yours.”</p>
   </div>
 
+   <h2 class="category">Our Products</h2>
+
+  <div id="products-container" class="product-cont">
+  </div>
+  <p id="loading-text">Loading products</p>
+
+  <!--
   <h2 class="category">Beds</h2>
   
   <div class="product-card">
@@ -81,8 +86,6 @@
     <p>Four Seater</p>
     <p>₦260,000</p>
   </div>
-
-
 
   <h2 class="category">Dining Sets</h2>
 
@@ -161,6 +164,7 @@
     <p>Squared Led</p>
     <p>₦70,000</p>
   </div>  <br><br>
+  -->
 
   <hr style="color: burlywood; border-width: 2px;">
 
@@ -174,19 +178,7 @@
 
   </h3>
     
+<script src="index.js"></script>
+
 </body>
-<script>
-  const token = localStorage.getItem('token');
-  if (token) {
-    fetch('api/user/profile', {
-      headers: {'Authorization' : `Beare ${token}`}
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.user?.name) {
-        document.getElementById('auth-section').textContent = `welcome, ${data.user.name}!`;
-      }
-    });
-  }
-</script>
 </html>

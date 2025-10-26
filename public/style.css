@@ -35,7 +35,6 @@
   font-family: 'Times New Roman';
 }
 
-
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -45,6 +44,12 @@
   text-align: center;
   display: inline-block;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-card img {
