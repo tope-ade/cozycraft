@@ -5,7 +5,6 @@
   color:black; 
   border-radius: 10px;
   text-decoration-line: underline;
-
 }
 
 .welcome-text {
@@ -15,10 +14,46 @@
   font-weight: bold;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between input and button */
+  margin: 10px 0;
+}
+
 .search-input {
   padding: 5px; 
   border-radius: 10px; 
   border-color: burlywood;
+  width: 25%;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: burlywood;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: burlywood;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-btn:hover {
+  background-color: peru; 
+}
+
+.search-btn:hover {
+  background-color: peru;
 }
 
 .btn {
@@ -61,14 +96,12 @@
  
 h3 {
   padding: 2px;
-  background-color: burlywood;
   border-radius: 10px;
   font-size: small;
 }
 
 .login {
   font-weight: bold;
-  
 }
 
 .login-btn {
@@ -77,7 +110,6 @@ h3 {
   background-color: burlywood; 
   font-weight: bold; 
 }
-
 
 .hero-side {
   flex: 2; /* take less space */
@@ -92,12 +124,10 @@ h3 {
   text-align: center;
 }
 
-
 .hero-side h2 {
   font-size: 34px;
   margin-bottom: 10px;
 }
-
 
 .hero-side p {
   margin-bottom: 10px;

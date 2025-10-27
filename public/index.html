@@ -9,17 +9,21 @@
 </head>
 
 <body>
-  <h1 class="brand-name">
-     <a href="index.html">COZYCRAFT</a>
-  </h1>
+  <header>
+    <h1 class="brand-name">
+      <a href="index.html">COZYCRAFT</a>
+    </h1>
 
-  <input class ="search-input" type="text"; placeholder="search products">  
+    <div id="search-bar">
+    <input class ="search-input" type="text"; placeholder="search products and categories">  
+    <button class="search-btn">Search</button>
+    </div>
 
-  <div id="auth-section" class="welcome-text">
-     <a class = "btn" href="signup.html">sign up</a>
-     <a class = "btn" href="login.html">log in</a>
-  </div>
-    
+    <div id="auth-section" class="welcome-text">
+      <a class = "btn" href="signup.html">sign up</a>
+      <a class = "btn" href="login.html">log in</a>
+    </div>
+  </header> 
 
   <hr style="color: burlywood; border-width: 2px;">
 
@@ -169,13 +173,11 @@
   <hr style="color: burlywood; border-width: 2px;">
 
   <h3>
-    <input class ="search-input" type="text"; 
-     placeholder="input email address">  
-
-     <button class="btn">subscribe</button>
-
-     <p>...please subscribe to our newsletter</p>
-
+    <div id="subscription-bar">
+      <input class ="search-input" type="text"; placeholder="input email address">  
+      <button class="subscribe-btn">subscribe</button>
+    </div>
+    <p>...please subscribe to our newsletter</p>
   </h3>
     
 <script src="index.js"></script>
