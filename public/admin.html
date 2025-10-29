@@ -1,14 +1,44 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cozycraft Admin -Add Product</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+  <title>Cozycraft Admin -Add Product</title>
+</head>
 
-  <body>
-    
-  </body>
+<body>
+  <h1 class="brand-name"><a href="index.html">COZYCRAFT</a></h1>
+  <p class="login">Admin | Add new Products</p>
+  <hr style="color: burlywood; border-width: 2px;">
+
+  <fieldset>
+    <legend>Add Product</legend>
+    <form id="product-form">
+      <label>Product Name</label> <br>
+      <input id="name" class="search-input" type="text" required> <br>
+
+      <label>Category</label> <br>
+      <input id="category" class="search-input" type="text" required> <br>
+
+      <label>Price</label> <br>
+      <input id="price" class="search-input" type="number" required> <br>
+
+      <label>Description</label> <br>
+      <input id="description" class="search-input" type="text" rows="3"> <br>
+
+      <label>Image</label> <br>
+      <input id="image" class="search-input" type="text" placeholder="/images/beds/singlebed.jpg" required> <br><br>
+
+      <button class="login-btn" type="submit">Submit</button>
+    </form>
+  </fieldset>
+
+  <p id="message" style="color: burlywood;"></p>
+
+  <script src="index.js"></script>
+
+</body>
 
 </html>

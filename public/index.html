@@ -36,7 +36,7 @@
 
   <div id="products-container" class="product-cont">
   </div>
-  <p id="loading-text">Loading products</p>
+  <p id="loading-text" class="loading-text">Loading products</p>
 
   <!--
   <h2 class="category">Beds</h2>
@@ -172,15 +172,22 @@
 
   <hr style="color: burlywood; border-width: 2px;">
 
-  <h3>
-    <div id="subscription-bar">
-      <input class ="search-input" type="text"; placeholder="input email address">  
-      <button class="subscribe-btn">subscribe</button>
-    </div>
-    <p>...subscribe to our newsletter to get latest product</p>
+  <section>
+  <h3> 
+    <p><strong>Subscribe to our newsletter</strong></p> 
+    <p>...stay updated on our newest products, exclusive deals and home styling inspiration</p>
   </h3>
+    <form id="subscribe-form">
+      <input required id="email" class ="search-input" type="email"; placeholder="input email address">  
+      <button type="submit" class="subscribe-btn">subscribe</button>
+    </form>
+    <p id="subscribe-message"></p>
     
+  </section> 
+
 <script src="index.js"></script>
+
+<a href="admin.html" style="margin-left:10px;">Add Product</a>
 
 </body>
 </html>

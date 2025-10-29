@@ -93,11 +93,16 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
+.loading-text {
+  color: burlywood;
+}
  
 h3 {
   padding: 2px;
   border-radius: 10px;
   font-size: small;
+  color: burlywood;
 }
 
 .login {
