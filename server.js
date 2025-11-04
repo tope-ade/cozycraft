@@ -8,6 +8,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
+const subscriberRoutes = require('./routes/subscriberRoutes');
 
 //initialize express
 const app = express();
@@ -23,6 +24,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/subscribe', subscriberRoutes)
 
 //serve frontend static files from /public
 app.use(express.static(path.join(__dirname, 'public')));

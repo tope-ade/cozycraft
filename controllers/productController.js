@@ -33,7 +33,7 @@ exports.getProductById = async (req,res) => {
   }
 };
 
-//protected route
+//protected route -create
 exports.createProduct = async (req,res) => {
   try {
     const {name, category, price, description, imageUrl} =req.body;
@@ -56,7 +56,7 @@ exports.createProduct = async (req,res) => {
   }
 };
 
-//protected route
+//protected route - delete
 exports.deleteProduct = async (req,res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
