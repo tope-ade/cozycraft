@@ -3,6 +3,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const logger = require('../config/logger');
 
 exports.signup = async (req,res) => {
   try {
@@ -33,7 +34,7 @@ exports.signup = async (req,res) => {
     });
 
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     res.status(500).json({
       message : 'server error'
     });
@@ -69,7 +70,7 @@ exports.login = async (req,res) => {
     });
 
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     res.status.json({
       message : 'server error'
     });

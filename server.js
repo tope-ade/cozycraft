@@ -4,11 +4,13 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const subscriberRoutes = require('./routes/subscriberRoutes');
+const logger = require('./config/logger');
 
 //initialize express
 const app = express();
@@ -35,4 +37,4 @@ app.use((req,res) => {
 });
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`server running on http://localhost:${PORT}`));
+app.listen(PORT, () => logger.info(`server running on http://localhost:${PORT}`));

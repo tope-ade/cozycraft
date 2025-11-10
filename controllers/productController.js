@@ -1,6 +1,7 @@
 
 const Product = require('../models/Product');
 const { findById } = require('../models/User');
+const logger = require('../config/logger');
 
 exports.getAllProducts = async (req,res) => {
   try {
@@ -49,7 +50,7 @@ exports.createProduct = async (req,res) => {
     });
 
   } catch (err) {
-    console.error('Error creating product:', err);
+    logger.error('Error creating product:', err);
     res.status(500).json({
       message : 'Server error'
     });
@@ -71,7 +72,7 @@ exports.deleteProduct = async (req,res) => {
       });
 
   } catch (err) {
-    console.error('Error deleting product:', err);
+    logger.error('Error deleting product:', err);
     res.status(500).json({
       message : 'Server error'
     });
