@@ -153,3 +153,32 @@ if (adminPageForm) {
   });
 }
 
+
+//search functionality
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+
+async function searchProducts() {
+  const query = searchInput.value.trim();
+  if(!query) 
+  return;
+
+  try {
+    const res = await fetch(`/api/products?search=${encodeURIComponent(query)}`);
+    const products = await res.json();
+    renderProducts(products);
+  } catch (err) {
+    console.error('Search failed:', err);
+  }
+}
+
+if (searchBtn && searchInput) {
+  searchBtn.addEventListener('click', searchProducts);
+
+  //enter key = search
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter')
+     searchProducts(); 
+  });
+}
+
