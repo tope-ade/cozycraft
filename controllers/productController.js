@@ -1,11 +1,22 @@
 
 const Product = require('../models/Product');
-const { findById } = require('../models/User');
 const logger = require('../config/logger');
 
 exports.getAllProducts = async (req,res) => {
   try {
-    const products = await Product.find().sort({createdAt: -1});
+    const { search } = req.query; //?search=chair
+    let query = {};
+
+    if (search) { //search both name and category(case-insentitive)
+      query = {
+        $or : [
+          {name : {$regex : search, $options : 'i'}},
+          {category : {$regex : search, $options : 'i'}}
+        ],
+      }
+    }
+
+    const products = await Product.find(query).sort({createdAt: -1});
     res.json(products);
     
   } catch (err) {
