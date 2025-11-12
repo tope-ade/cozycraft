@@ -154,31 +154,56 @@ if (adminPageForm) {
 }
 
 
+//helper function to render products
+function renderProducts(products) {
+  container.innerHTML = ''; 
+
+  if (!products.length) {
+    container.innerHTML = '<p>No products found.</p>';
+    return;
+  }
+
+  products.forEach((p) => {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+    productCard.innerHTML = `
+      <img src='${p.imageUrl || '/images/default.jpg'}' alt='${p.name}'>
+      <p><strong>${p.name}</strong></p>
+      <p>₦${p.price.toLocaleString()}</p>
+    `;
+    container.appendChild(productCard);
+  });
+}
+
 //search functionality
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 
 async function searchProducts() {
   const query = searchInput.value.trim();
-  if(!query) 
-  return;
+
+  if (!query) {
+    loadProducts();
+    return;
+  }
 
   try {
+    loadingtext.textContent = 'Searching...';
     const res = await fetch(`/api/products?search=${encodeURIComponent(query)}`);
     const products = await res.json();
+    loadingtext.textContent = '';
     renderProducts(products);
   } catch (err) {
     console.error('Search failed:', err);
+    loadingtext.textContent = 'Search failed. Try again.';
   }
 }
 
 if (searchBtn && searchInput) {
   searchBtn.addEventListener('click', searchProducts);
 
-  //enter key = search
   searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter')
-     searchProducts(); 
+    if (e.key === 'Enter') searchProducts();
   });
 }
 
