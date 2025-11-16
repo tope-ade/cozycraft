@@ -4,14 +4,16 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-
 const connectDB = require('./config/db');
+const logger = require('./config/logger');
+
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const subscriberRoutes = require('./routes/subscriberRoutes');
-const logger = require('./config/logger');
 const statsRoutes = require('./routes/statsRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+
 
 //initialize express
 const app = express();
@@ -29,6 +31,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/subscribe', subscriberRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/cart', cartRoutes);
 
 //serve frontend static files from /public
 app.use(express.static(path.join(__dirname, 'public')));
