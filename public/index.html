@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Cozycraft</title>
 </head>
 
@@ -13,16 +13,24 @@
     <h1 class="brand-name">
       <a href="index.html">COZYCRAFT</a>
     </h1>
+    
+    <!--search/category filter-->
+    <div id="search-bar" class="search-bar"> <input id="search-input" class="search-input" type="text" placeholder="Search products...">  
 
-    <div id="search-bar">
-    <input id="search-input" class ="search-input" type="text" placeholder="search products and categories">  
+    <select id="category-select" class="search-input" style="width: auto;">
+        <option value="">Loading...</option>
+    </select>
+  
     <button id="search-btn" class="search-btn">Search</button>
-    </div>
-
+   </div>
+    
+    <!--auth section/profile display-->
     <div id="auth-section" class="welcome-text">
       <a class = "btn" href="signup.html">sign up</a>
       <a class = "btn" href="login.html"> log in </a>
     </div>
+
+    <a class="btn" href="cart.html">cart(<span id="cart-count">0</span>)</a>
   </header> 
 
   <hr style="color: burlywood; border-width: 2px;">
@@ -34,6 +42,7 @@
 
    <h2 class="category">Our Products</h2>
 
+   <!--product grid-->
   <div id="products-container" class="product-cont">
   </div>
   <p id="loading-text" class="loading-text">Loading products</p>
@@ -41,19 +50,20 @@
   <hr style="color: burlywood; border-width: 2px;">
 
   <section>
-  <h3> 
+  <h3> <!--newsletter-->
     <p><strong>Subscribe to our newsletter</strong></p> 
     <p>...stay updated on our newest products, exclusive deals and home styling inspiration</p>
   </h3>
     <form id="subscribe-form">
-      <input required id="email" class ="search-input" type="email"; placeholder="input email address">  
+      <input required id="email" class ="search-input" type="email" placeholder="input email address">  
       <button type="submit" class="subscribe-btn">subscribe</button>
     </form>
     <p id="subscribe-message"></p>
-    
-  </section> 
+    </section> 
 
-<script src="index.js"></script>
+<script type="module" src="./js/main.js"></script>
+<script type="module" src="./js/newsletter.js"></script>
+<script type="module" src="./js/cart.js"></script>
 
 <a href="admin.html" style="margin-left:10px;">Add Product</a>
 

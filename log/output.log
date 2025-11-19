@@ -25,3 +25,17 @@
 [11:25:57.107] [32mINFO[39m (71197): [36mmongoDB connected[39m
 [11:28:01.953] [32mINFO[39m (71327): [36mserver running on http://localhost:8080[39m
 [11:28:08.250] [32mINFO[39m (71327): [36mmongoDB connected[39m
+[11:51:00.029] [32mINFO[39m (72161): [36mserver running on http://localhost:8080[39m
+[11:51:04.122] [32mINFO[39m (72161): [36mmongoDB connected[39m
+[11:51:08.905] [32mINFO[39m (72161): [36mAdded product 64f6c0f4b2f4a1b1d1a67890 to cart for user 64f6b8e4a1f2c8b9a1e12345[39m
+[11:55:41.584] [31mERROR[39m (72161): [36mError updating quantity, Cannot destructure property 'userId' of 'req.body' as it is undefined.[39m
+[11:55:44.605] [31mERROR[39m (72161): [36mError removing item, Cannot destructure property 'userId' of 'req.body' as it is undefined.[39m
+[14:17:08.220] [32mINFO[39m (91686): [36mserver running on http://localhost:8080[39m
+[14:17:10.192] [32mINFO[39m (91686): [36mmongoDB connected[39m
+[18:05:53.454] [32mINFO[39m (93874): [36mserver running on http://localhost:8080[39m
+[18:05:55.350] [32mINFO[39m (93874): [36mmongoDB connected[39m
+[18:16:16.563] [32mINFO[39m (93986): [36mserver running on http://localhost:8080[39m
+[18:16:18.814] [32mINFO[39m (93986): [36mmongoDB connected[39m
+[18:17:51.050] [32mINFO[39m (94028): [36mserver running on http://localhost:8080[39m
+[18:17:52.932] [32mINFO[39m (94028): [36mmongoDB connected[39m
+[10:16:02.993] [32mINFO[39m (91686): [36mNew subscriber added[39m
