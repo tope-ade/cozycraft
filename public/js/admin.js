@@ -1,6 +1,6 @@
 
 // adding event listener to handle product addition
-export function initAdminPage() {
+ function initAdminPage() {
   const form = document.getElementById("product-form");
   const msg = document.getElementById("message");
   const token = localStorage.getItem("token");
@@ -44,3 +44,4 @@ export function initAdminPage() {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", initAdminPage);
